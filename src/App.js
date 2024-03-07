@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import './App.css';
+import { useState } from 'react';
+import Button from './components/Button';
+import Display from './components/Display';
+import ParentContainer from './components/ParentContainer';
 function App() {
+  const [data,setData]=useState('');
+  function handleClick(val){
+    if(val==='='){
+      setData(eval(data)+'');
+    }else if(val==='C'){
+      setData("");
+    }else if(val==='x'){
+      setData(data.slice(0,-1));
+    }else{
+      setData(data+val);
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <ParentContainer>
+     <Display data={data}></Display>
+     <Button btnClick={handleClick}></Button>
+   </ParentContainer>
   );
 }
 

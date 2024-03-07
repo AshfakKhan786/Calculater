@@ -1,0 +1,9 @@
+.display{
+    font-size: 50px;
+    width: 90%;
+    margin: 10px;
+    box-shadow: 0px 0px 2px rgb(15, 15, 15);
+    border-radius:2px;
+    /* background: rgb(180,58,172); */
+    /* background: linear-gradient(90deg, rgba(180,58,172,1) 0%, rgba(253,29,29,1) 76%, rgba(252,176,69,1) 100%); */
+}
